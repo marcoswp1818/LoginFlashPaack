@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Packs - Acesso ao Painel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPLAGXX645-Dzr6rKssi-T17URqRPu0O6WKR6k5hJUB9jdf_nrRqS6KZNm5fKQ_tvjOqU6XNk1XhpOMCYY7NWW6Yn5ikvpAWL9eRfkpYjeYTRwId1FSS3eQ0SOIV21Bwe8l7eEn6TD-v_YGdEPc3x0n=w1574-h885-s-no-gm?authuser=0" alt="Flash Packs Logo" class="logo-img">
+            </h1> 
+            <nav>
+                <ul>
+                    <li><a href="https://flashpack.vercel.app/">Início</a></li>
+                    <li><a href="cadastro.html" class="btn-primary">Área do Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form-page-container">
+        <h2>Acesso ao Painel</h2>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openLoginForm(event, 'login')">Login</button>
+            <button class="tab-button" onclick="openLoginForm(event, 'registro')">Criar Conta</button>
+            <button class="tab-button" onclick="openLoginForm(event, 'redefinir')">Redefinir Senha</button>
+        </div>
+
+        <div id="login" class="tab-content" style="display: block;">
+            <form id="form-login">
+                <input type="email" id="login-email" placeholder="E-mail de Acesso" required>
+                <input type="password" id="login-senha" placeholder="Senha" required>
+                <button type="submit" class="btn-form-submit">Entrar</button>
+                <p style="margin-top: 15px; font-size: 0.9em;">
+                    <a href="#" onclick="openLoginForm(event, 'redefinir')">Esqueci minha senha</a> | 
+                    <a href="#" onclick="openLoginForm(event, 'registro')">Novo Cadastro</a>
+                </p>
+            </form>
+        </div>
+
+        <div id="registro" class="tab-content" style="display: none;">
+            <form id="form-registro">
+                <input type="email" id="registro-email" placeholder="Seu Melhor E-mail" required>
+                <input type="password" id="registro-senha" placeholder="Crie uma Senha (mínimo 6 caracteres)" required minlength="6">
+                <input type="password" id="registro-confirmar-senha" placeholder="Confirme a Senha" required minlength="6">
+                <button type="submit" class="btn-form-submit">Criar Conta</button>
+            </form>
+        </div>
+
+        <div id="redefinir" class="tab-content" style="display: none;">
+            <form id="form-redefinir">
+                <input type="email" id="redefinir-email" placeholder="Seu E-mail de Cadastro" required>
+                <input type="password" id="redefinir-nova-senha" placeholder="Nova Senha (mínimo 6 caracteres)" required minlength="6">
+                <button type="submit" class="btn-form-submit">Redefinir</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Flash Packs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

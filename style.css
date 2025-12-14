@@ -1,0 +1,384 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+/* --- Variáveis de Tema (Roxo) --- */
+:root {
+    --primary-color: #6A0DAD; /* Roxo escuro principal */
+    --secondary-color: #E6E6FA; /* Lavanda clara para fundos */
+    --accent-color: #8A2BE2; /* Azul Violeta para destaque */
+    --text-color: #333;
+    --white: #fff;
+    --success: #6B8E23; /* Verde Oliva para sucesso */
+    --error: #DC3545; /* Vermelho padrão para erro */
+    --light-gray: #F0F2F5; /* Cinza muito claro para seções */
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray); 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* --- ESTILOS PARA LOGO IMAGEM (NOVO) --- */
+header .logo {
+    height: 35px; /* Define a altura da área da logo */
+    color: transparent !important; 
+    display: flex; 
+    align-items: center;
+    font-size: initial; /* Reseta o tamanho da fonte */
+}
+
+.logo-img {
+    height: 100%; /* Faz a imagem preencher a altura definida em .logo */
+    width: auto; /* Mantém a proporção */
+    display: block;
+}
+/* ------------------------------------- */
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Botões de Navegação e CTA --- */
+.btn-primary, .btn-secondary, .btn-cta, .btn-form-submit {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px; 
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease; 
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 1px solid var(--primary-color);
+    margin-left: 10px;
+}
+.btn-primary:hover {
+    background-color: var(--accent-color); 
+    border-color: var(--accent-color);
+    transform: translateY(-2px); 
+}
+
+.btn-cta {
+    background-color: var(--success);
+    color: var(--white);
+    border: 1px solid var(--success);
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+.btn-cta:hover {
+    background-color: #556B2F; 
+    border-color: #556B2F;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    margin-top: 15px;
+    text-align: center;
+}
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-form-submit {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: auto;
+    border-radius: 25px; 
+}
+.btn-form-submit:hover {
+     background-color: var(--accent-color); 
+}
+
+
+/* --- Seção Hero --- */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); 
+    color: var(--white);
+    padding: 100px 0; 
+    text-align: center;
+    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.1);
+}
+
+.hero h2 {
+    font-size: 3em; 
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Seções de Conteúdo (Planos, Funcionalidades) --- */
+.section-planos, .section-func {
+    padding: 80px 0; 
+    text-align: center;
+    background-color: var(--white); 
+}
+
+.section-planos h3, .section-func h3 {
+    margin-bottom: 50px;
+    font-size: 2.5em; 
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.planos-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+.plano {
+    background: var(--secondary-color); 
+    padding: 30px;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+    flex: 1;
+    max-width: 350px;
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05); 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.plano:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.plano.destaque {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.05) translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: var(--accent-color);
+}
+
+.plano.destaque h4, .plano.destaque .preco {
+    color: var(--white);
+}
+
+/* Estilos de lista de planos */
+.plano h4 { font-size: 2em; margin-bottom: 15px; color: var(--primary-color); font-weight: 600; }
+.plano.destaque h4 { color: var(--white); }
+.plano .preco { font-size: 3em; font-weight: bold; color: var(--text-color); margin-bottom: 25px; }
+.plano.destaque .preco { color: var(--white); }
+.plano .preco span { font-size: 0.5em; font-weight: normal; opacity: 0.8; }
+.plano ul { list-style: none; padding: 0; margin-bottom: 30px; flex-grow: 1; }
+.plano ul li { margin-bottom: 12px; display: flex; align-items: flex-start; }
+.plano ul li .icon { margin-right: 12px; color: var(--success); font-size: 1.3em; font-style: normal; line-height: 1.6; }
+.plano.destaque ul li .icon { color: var(--white); }
+.plano a { display: block; text-align: center; margin-top: auto; }
+
+
+/* --- Seção de Funcionalidades --- */
+.section-func {
+    background-color: var(--light-gray); 
+    border-top: 1px solid #e0e0e0;
+}
+
+.func-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.func-grid div {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex: 1;
+    min-width: 280px; 
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.func-grid div:hover {
+    transform: translateY(-5px);
+}
+
+.func-grid h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.func-grid p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+
+/* --- Estilos para Páginas de Formulário (Login, Cadastro, Contato, Checkout) --- */
+.form-page-container {
+    max-width: 600px; 
+    margin: 80px auto;
+    padding: 40px;
+    background-color: var(--white);
+    border: 1px solid #ccc;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.form-page-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.form-page-container input, .form-page-container select, .form-page-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+.form-page-container textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* --- Estilos de Abas (usadas em cadastro.html e login.html) --- */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.tab-button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--secondary-color);
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+    margin: 0 5px;
+    color: var(--text-color); 
+    transition: all 0.2s;
+    border-radius: 8px 8px 0 0;
+}
+.tab-button.active {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.tab-content {
+    padding: 20px 0;
+}
+
+/* --- Estilos para Lista de Cadastros (cadastro.html) --- */
+.item-cadastro {
+    background: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.item-cadastro:hover {
+    transform: translateX(5px);
+}
+
+.item-cadastro h5 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.item-cadastro p {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+/* --- FIM Estilos para Lista de Cadastros --- */
+
+
+/* --- Rodapé --- */
+footer {
+    background: #2c2c2c; 
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1em;
+    border-top: 5px solid var(--accent-color); 
+    margin-top: 50px; 
+}
+
+.link-footer {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+.link-footer:hover {
+    color: var(--primary-color);
+}
